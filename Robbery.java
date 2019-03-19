@@ -31,8 +31,20 @@ public class Robbery {
 * Returns an int array of the individual worths of the items you took
 */
 	public int[] takeRobInventory(int[][] DPTable) {
+
+
+		int[DPTable.length] ratio;
+		/*
+		int[DPTable[][].length] worth;
+		for(int i = 0; i < DPTable[][].length; i++)
+
+		for(int i = 0; i < DPTable.length; i++)
+		{
+			ratio[i] = DPtable[0][i] / DPTable[i][0];
+		}
+ 		*/
 		// fill in here, change the return
-		return new int[DPTable.length];
+		return ratio;
 	}
 
 	public static void main(String[] args) {
@@ -40,6 +52,14 @@ public class Robbery {
 		int bagCapacity = 40;
 		int[] itemSizes = {2, 25, 6, 13, 1, 15, 8, 5, 17, 4};
 		int[] itemWorths = {35, 120, 900, 344, 29, 64, 67, 95, 33, 10};
+		int[itemSizes.length][itemWorths.length] items;
+		for(int i = 0; i < itemSizes.length; i++){
+			items[i] = itemSizes[i];
+		}
+		for(int i = 0; i < itemSizes.length; i++){
+			items[0][i] = itemWorths[i];
+		}
+		takeRobInventory(items);
 
 		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
 		System.out.println("Max worth of the bag: " + maxWorthRecur);
